@@ -21,7 +21,7 @@ on:
   schedule:
     ## Cronograma de execução.
     ## Abaixo, o cronograma está definido para executar a cada 5 minutos.
-    - cron: '5 11 * * 4'
+    - cron: '17 11 * * 1'
 
 ##Configuração de quais atividades serão executadas. (Se teste de unidade / E2E / Testes de mutação / etc).
 ##Jobs são as atividades que serão executadas.
