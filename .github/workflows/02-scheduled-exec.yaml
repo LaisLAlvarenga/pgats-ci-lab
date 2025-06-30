@@ -1,13 +1,27 @@
-# CI DE nível N1. ( Disparo manual a partir de 1 clique )
+# CI DE nível N2. ( Disparo agendado )
+
+## a b c d e
+### a - minuto
+### b - hora
+### c - dia do mês
+### d - mês
+### e - dia da semana
+
+## Exemplo: Rodar o regressivo toda segunda-feira pela manhã.
+## Cronograma: 0 6 * * 1 -- * EQUIVALE A TODOS, OU SEJA TODOS OS DIAS DO MÊS.
+### O 1 equivale a segunda-feira, sendo o primeiro dia o domingo, dia zero.
+### O nome disso é CRON. (Ferramenta crontab.guru te gera isso de forma visual e fácil)
 
 ##Nome do pipeline.
-name: 'Execução Manual'
+name: 'Execução Agendada'
 
 ##Regras de disparo (Gatilhos / Triggers).
-###gatilho de exec manual = workflow_dispatch.
 
 on:
-  workflow_dispatch:
+  schedule:
+    ## Cronograma de execução.
+    ## Abaixo, o cronograma está definido para executar a cada 5 minutos.
+    - cron: '2 * * * *'
 
 ##Configuração de quais atividades serão executadas. (Se teste de unidade / E2E / Testes de mutação / etc).
 ##Jobs são as atividades que serão executadas.
